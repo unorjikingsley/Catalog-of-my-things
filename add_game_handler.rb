@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # add_game_handler.rb
 require_relative 'handler'
 

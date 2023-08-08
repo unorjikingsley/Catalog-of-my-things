@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # list_games_handler.rb
 require_relative 'handler'
 
