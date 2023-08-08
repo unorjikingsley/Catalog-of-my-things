@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This class provides a comprehensive set of functionality and interfaces for the seamless operation of the application.
 # It serves as a crucial component that enables the smooth functioning and interaction between various elements within
 # the app. By encapsulating essential features and services, this class ensures a streamlined user experience and
