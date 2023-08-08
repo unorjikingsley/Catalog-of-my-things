@@ -8,6 +8,7 @@ class Item
     @id = id || Random.rand(1..1000)
     @genre = genre
     @author = author
+    @source = source
     @label = label
     @publish_date = publish_date
     @archived = archived
@@ -22,7 +23,10 @@ class Item
 
   def add_label; end
 
-  def add_source; end
+  def add_source(source)
+    @source = source
+    source.items << self unless source.items.include?(self)
+  end
 
   def can_be_archived?
     current_year = Date.today.year
