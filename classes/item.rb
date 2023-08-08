@@ -1,4 +1,6 @@
 require 'date'
+require_relative 'movie/source'
+require_relative 'music/genre'
 
 class Item
   attr_reader :id
