@@ -12,4 +12,11 @@ class Label
     item.label = self
     @items << item
   end
+
+  def list(_all_labels)
+    labels = @items.map(&title).uniq
+    labels.each do |item|
+      print "'#{item.title}', "
+    end
+  end
 end
