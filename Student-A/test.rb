@@ -1,5 +1,5 @@
-require_relative './classes/book'
-require_relative './classes/label'
+require_relative 'classes/book'
+require_relative 'classes/label'
 
 # Create some sample data
 item1 = Item.new('2010-01-01')
