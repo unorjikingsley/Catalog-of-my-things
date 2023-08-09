@@ -1,13 +1,16 @@
-# list_games_handler.rb
 require_relative 'handler'
+require_relative 'game'
 
-# Handler class for listing games in the catalog.
+# Handler class for listing all games in the catalog.
 class ListGamesHandler < Handler
-  def handle(catalog)
-    games = catalog.list_games
+  def initialize(games)
+    @games = games
+  end
+
+  def handle
     puts 'List of all games:'
-    games.each do |game|
-      puts "#{game.title} (#{game.last_played_at})"
+    @games.each_with_index do |game, index|
+      puts "#{index + 1}. #{game.title} (Multiplayer: #{game.multiplayer}, Last Played: #{game.last_played_at})"
     end
   end
 end
