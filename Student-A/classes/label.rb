@@ -14,16 +14,10 @@ class Label
     item.label = self
   end
 
-  def list_all_labels
-    label_titles = @items.map { |item| item.label.title }.uniq
-    print label_titles.join(', ')
-  end
-
   def to_hash
     {
       title: @title,
-      color: @color,
-      items: @items.map(&:to_hash)
+      color: @color
     }
   end
 end

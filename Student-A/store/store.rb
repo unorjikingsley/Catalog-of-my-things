@@ -19,6 +19,7 @@ class Store
     @sources = []
     # synch functions are goes here
     sync_books
+    sync_labels
   end
 
   def add_book(book)
@@ -87,7 +88,7 @@ class Store
 
   def sync_labels
     begin
-      @books.concat(labels_data)
+      @labels.concat(labels_data)
     rescue Errno::ENOENT
       puts 'No books are found! feel free to create books in the choice option'
       []

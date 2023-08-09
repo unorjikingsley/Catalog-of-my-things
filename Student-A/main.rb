@@ -8,10 +8,8 @@ def main
   app = App.new
   app.exit = false
   until app.exit
-    puts 'My Catalog Things!'
     puts
     app.display_menu
-    puts '11 - exit'
     choice = gets.chomp
     app.menu_options[choice]&.call
   end
