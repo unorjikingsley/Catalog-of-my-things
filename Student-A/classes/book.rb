@@ -52,9 +52,6 @@ class Book < Item
 
   def to_hash
     {
-      genre: @genre,
-      author: @author,
-      source: @source,
       label: { title: @label.title, color: @label.color },
       publish_date: @publish_date.strftime('%Y-%m-%d'),
       archived: @archived,

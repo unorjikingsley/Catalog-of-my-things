@@ -20,21 +20,15 @@ class App
   def menu_options
     { '1' => method(:all_books), '2' => method(:all_music_albums), '3' => method(:all_movies),
       '4' => method(:all_genres), '5' => method(:all_authors), '6' => method(:all_sources),
-      '7' => method(:add_book), '8' => method(:add_music_album), '9' => method(:add_movie),
-      '10' => method(:add_game), '11' => method(:exit_app?) }
+      '7' => method(:all_labels) '8' => method(:add_book), '9' => method(:add_music_album),
+      '10' => method(:add_movie), '11' => method(:add_game), '12' => method(:exit_app?) }
   end
 
   def display_menu
-    puts '1 - List all books'
-    puts '2 - List all music albums'
-    puts '3 - List all movies'
-    puts '4 - List all genres'
-    puts '5 - List all authors'
-    puts '6 - List all sources'
-    puts '7 - Add a book'
-    puts '8 - Add a music album'
-    puts '9 - Add a movie'
-    puts '10 - Add a game'
+    puts '1 - List all books', '2 - List all music albums', '3 - List all movies'
+    puts '4 - List all genres', '5 - List all authors', '6 - List all sources'
+    puts '7- Lists all labels', '8 - Add a book', '9 - Add a music album'
+    puts '10 - Add a movie', '11 - Add a game', '12 - EXIT'
   end
 
   private
@@ -61,6 +55,10 @@ class App
 
   def all_sources
     puts 'all sources'
+  end
+
+  def all_labels
+    puts @store.labels.map { |label| "'#{label.title}'" }.join(', ')
   end
 
   def add_book

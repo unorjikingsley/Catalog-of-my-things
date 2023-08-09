@@ -1,9 +1,12 @@
 require 'json'
 require_relative '../classes/book'
 require_relative '../classes/label'
+require_relative './modules/synchronizer'
 
 class Store
   attr_accessor :books, :labels, :albums, :genres, :authors, :games, :movies, :sources
+
+  include DataSynchronizer
 
   def initialize
     @books = []
@@ -71,16 +74,20 @@ class Store
   end
 
   def sync_books
-    file_name = 'books.json'
     begin
-      data = JSON.parse(File.read(file_name))
-      books_data = data.map do |book|
-        bk = Book.new(Date.parse(book['publish_date']), book['publisher'], book['cover_state'])
-        l = Label.new(book['label']['title'], book['label']['color'])
-        bk.label = l
-        bk
-      end
       @books.concat(books_data)
+    rescue Errno::ENOENT
+      puts 'No books are found! feel free to create books in the choice option'
+      []
+    end
+  rescue JSON::ParserError
+    puts 'error in parsing'
+    []
+  end
+
+  def sync_labels
+    begin
+      @books.concat(labels_data)
     rescue Errno::ENOENT
       puts 'No books are found! feel free to create books in the choice option'
       []
