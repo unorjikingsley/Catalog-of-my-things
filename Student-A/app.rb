@@ -5,6 +5,7 @@
 # Its purpose is to supply the necessary tools and interfaces that empower users to fully leverage the functionality
 # offered by the app.
 
+require 'date'
 require_relative './store/store'
 require_relative './classes/book'
 require_relative './classes/label'
@@ -63,23 +64,25 @@ class App
   end
 
   def add_book
-    print 'Publisher: '
+    print '(Book) Publisher: '
     pub = gets.chomp
-    print 'Cover State: '
+    print '(Book) Cover State: '
     cov_s = gets.chomp
-    book = Book.new(pub, cov_s)
-    store.add_book(book)
+    print 'Published Date(YYYY-MM-DD): '
+    date = gets.chomp
+    book = Book.new(Date.parse(date), pub, cov_s)
+    @store.add_book(book)
     add_label(book)
   end
 
   def add_label(book)
-    print 'Title: '
+    print '(Label) Title: '
     title = gets.chomp
-    print 'Color: '
+    print '(Label) Color: '
     color = gets.chomp
     label = Label.new(title, color)
     label.add_item(book)
-    store.add_label(label)
+    @store.add_labels(label)
   end
 
   def add_music_album
@@ -96,6 +99,7 @@ class App
 
   def exit_app?
     # save all files method call here
+    @store.save_data
     puts 'Cheers!'
     @exit = true
   end

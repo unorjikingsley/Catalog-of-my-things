@@ -1,3 +1,5 @@
+require 'json'
+
 class Store
   attr_accessor :books, :labels, :albums, :genres, :authors, :games, :movies, :sources
 
@@ -47,5 +49,13 @@ class Store
 
   def save_data
     # save data here into json
+    save_book
+  end
+
+  def save_book
+    file_name = 'books.json'
+    books_json_data = JSON.generate(books.map(&:to_hash))
+    File.write(file_name, books_json_data)
+    puts 'books are saved in json'
   end
 end

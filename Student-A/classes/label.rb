@@ -23,7 +23,7 @@ class Label
     {
       title: @title,
       color: @color,
-      items: @item.map(&:to_hash)
+      items: @items.map(&:to_hash)
     }
   end
 end
