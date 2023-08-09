@@ -6,7 +6,6 @@ class Item
 
   def initialize(publish_date, archived: false)
     @id = rand(1..1000)
-    @publish_date = Date.strptime(publish_date, '%Y-%m-%d')
     @archived = archived
   end
 
@@ -40,7 +39,7 @@ end
 class Book < Item
   attr_accessor :publisher, :cover_state
 
-  def initialize(label, publisher, cover_state, publish_date)
+  def initialize(publisher, cover_state)
     super(publish_date)
     @publisher = publisher
     @cover_state = cover_state

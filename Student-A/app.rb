@@ -5,8 +5,16 @@
 # Its purpose is to supply the necessary tools and interfaces that empower users to fully leverage the functionality
 # offered by the app.
 
+require_relative './store/store'
+require_relative './classes/book'
+require_relative './classes/label'
+
 class App
   attr_accessor :exit
+
+  def initialize
+    @store = Store.new
+  end
 
   def menu_options
     { '1' => method(:all_books), '2' => method(:all_music_albums), '3' => method(:all_movies),
@@ -55,7 +63,22 @@ class App
   end
 
   def add_book
-    puts 'add book'
+    print 'Publisher: '
+    pub = gets.chomp
+    print 'Cover State: '
+    cov_s = gets.chomp
+    book = Book.new(pub, cov_s)
+    store.add_book(book)
+    add_label(book)
+  end
+
+  def add_label(book)
+    print 'Title: '
+    title = gets.chomp
+    print 'Color: '
+    color = gets.chomp
+    label = Label.new(title, color)
+    label.add_item(book)
   end
 
   def add_music_album
