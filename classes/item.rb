@@ -4,13 +4,13 @@ require_relative 'music/genre'
 
 class Item
   attr_reader :id
-  attr_accessor :genre, :author, :label, :publish_date, :archived
+  attr_accessor :genre, :author, :label, :publish_date, :archived, :source, :id
 
   def initialize(publish_date, id = nil)
     @id = id || Random.rand(1..1000)
-    @genre = genre
+    # @genre = genre - already in the function
     @author = author
-    @source = source
+    # @source = source - already in the function
     @label = label
     @publish_date = publish_date
     @archived = archived
