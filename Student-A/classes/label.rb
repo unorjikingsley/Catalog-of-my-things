@@ -18,4 +18,12 @@ class Label
     label_titles = @items.map { |item| item.label.title }.uniq
     print label_titles.join(', ')
   end
+
+  def to_hash
+    {
+      title: @title,
+      color: @color,
+      items: @item.map(&:to_hash)
+    }
+  end
 end

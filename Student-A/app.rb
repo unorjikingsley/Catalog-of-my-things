@@ -79,6 +79,7 @@ class App
     color = gets.chomp
     label = Label.new(title, color)
     label.add_item(book)
+    store.add_label(label)
   end
 
   def add_music_album

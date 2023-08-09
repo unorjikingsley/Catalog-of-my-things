@@ -49,4 +49,17 @@ class Book < Item
   def can_be_archived?
     super || @cover_state.downcase == 'bad'
   end
+
+  def to_hash
+    {
+      genre: @genre,
+      author: @author,
+      source: @source,
+      label: @label.to_hash,
+      publish_date: @publish_date.strftime('%Y-%m-%d'),
+      archived: @archived,
+      publisher: @publisher,
+      cover_state: @cover_state
+    }
+  end
 end
