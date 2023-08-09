@@ -40,7 +40,7 @@ class App
   private
 
   def all_books
-    puts 'all books'
+    p @store.books
   end
 
   def all_music_albums
