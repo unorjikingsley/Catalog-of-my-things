@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'handler'
 require_relative 'author'
 
@@ -11,7 +13,7 @@ class AddAuthorHandler < Handler
     first_name = add_author_first_name
     last_name = add_author_last_name
 
-    id = @authors.empty? ? 1 : @authors.last.id + 1
+    @authors.empty? ? 1 : @authors.last.id + 1
     author = Author.new(first_name: first_name, last_name: last_name)
     @authors << author
 

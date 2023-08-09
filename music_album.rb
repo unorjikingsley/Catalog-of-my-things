@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MusicAlbum < Item
   attr_reader :on_spotify
 
@@ -7,13 +9,13 @@ class MusicAlbum < Item
   end
 
   def to_s
-    "Music Album - #{@title}\n" +
-      "ID: #{@id}\n" +
-      "Genre: #{@genre.name}\n" +
-      "Label: #{@label}\n" +
-      "Source: #{@source}\n" +
-      "Publish Date: #{@publish_date}\n" +
-      "On Spotify: #{@on_spotify}\n" +
+    "Music Album - #{@title}\n" \
+      "ID: #{@id}\n" \
+      "Genre: #{@genre.name}\n" \
+      "Label: #{@label}\n" \
+      "Source: #{@source}\n" \
+      "Publish Date: #{@publish_date}\n" \
+      "On Spotify: #{@on_spotify}\n" \
       "Archived: #{archived?}\n"
   end
 
@@ -21,4 +23,3 @@ class MusicAlbum < Item
     super && @on_spotify
   end
 end
-

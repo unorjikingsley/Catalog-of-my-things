@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Source
   attr_reader :id, :name
   attr_accessor :items
@@ -13,4 +15,3 @@ class Source
     item.source = self
   end
 end
-

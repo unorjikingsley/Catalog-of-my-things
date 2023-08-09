@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'handler'
 require_relative 'movie'
 require_relative 'add_genre_handler'

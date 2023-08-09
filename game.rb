@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'item'
 
 class Game < Item
@@ -14,6 +16,3 @@ class Game < Item
     super && last_played_at <= 2.years.ago
   end
 end
-
-
-

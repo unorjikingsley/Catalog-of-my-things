@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Handler
   def initialize(data)
     @data = data

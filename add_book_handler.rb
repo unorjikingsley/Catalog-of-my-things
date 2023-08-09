@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require_relative 'add_genre_handler'
 require_relative 'add_author_handler'
@@ -59,4 +60,3 @@ class AddBookHandler < Handler
     gets.chomp
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'handler'
 
 # Handler class for listing all authors in the catalog.
@@ -13,4 +15,3 @@ class ListAuthorsHandler < Handler
     end
   end
 end
-

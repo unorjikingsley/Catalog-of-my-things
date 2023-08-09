@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Author
   attr_reader :first_name, :last_name, :items
 
@@ -12,4 +14,3 @@ class Author
     item.author = self
   end
 end
-

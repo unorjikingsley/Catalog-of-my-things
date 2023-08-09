@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'handler'
 
 # Handler class for listing all genres in the catalog.

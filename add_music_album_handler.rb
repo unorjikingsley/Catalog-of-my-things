@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'handler'
 require_relative 'music_album'
 require_relative 'add_genre_handler'
@@ -22,7 +24,8 @@ class AddMusicAlbumHandler < Handler
     source = add_source
 
     id = @music_albums.empty? ? 1 : @music_albums.last.id + 1
-    music_album = MusicAlbum.new(id: id, title: title, on_spotify: on_spotify, publish_date: publish_date, genre: genre, label: label, source: source)
+    music_album = MusicAlbum.new(id: id, title: title, on_spotify: on_spotify, publish_date: publish_date,
+                                 genre: genre, label: label, source: source)
     @music_albums << music_album
 
     puts "Music Album '#{title}' added successfully!"
