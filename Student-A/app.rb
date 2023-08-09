@@ -40,7 +40,7 @@ class App
   private
 
   def all_books
-    p @store.books
+    puts @store.books.map { |book| "'#{book.publisher}'" }.join(', ')
   end
 
   def all_music_albums
