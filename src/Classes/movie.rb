@@ -1,5 +1,9 @@
 require_relative 'item'
 class Movie < Item
+  ##
+  # The Movie class represents a movie item created by an author.
+  # It inherits from the Item class and provides additional attributes and functionalities specific to movies.
+
   attr_reader :id
   attr_accessor :publish_date, :silent
 

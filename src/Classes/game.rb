@@ -1,7 +1,11 @@
-require_relative 'item'
 require 'date'
+require_relative 'item'
 
 class Game < Item
+  ##
+  # The Game class represents a game item created by an author.
+  # It inherits from the Item class and provides additional attributes and functionalities specific to games.
+
   attr_accessor :multiplayer, :last_played_at
 
   def initialize(multiplayer, last_played_at, publish_date)

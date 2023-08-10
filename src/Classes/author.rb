@@ -1,4 +1,10 @@
 class Author
+  ##
+  # Represents an author who has created multiple items such as books, movies, and music.
+  #
+  # The `Author` class provides a comprehensive and versatile model for managing and organizing
+  # various works attributed to an author.
+
   attr_accessor :name, :first_name, :last_name
 
   def initialize(name, first_name, last_name)

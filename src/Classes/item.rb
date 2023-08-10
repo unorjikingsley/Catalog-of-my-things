@@ -1,6 +1,11 @@
 require 'date'
 
 class Item
+  ##
+  # The Author class represents an author who has created multiple items such as
+  # books, movies, and music. It serves as a comprehensive and versatile model
+  # for managing and organizing various works attributed to an author.
+
   attr_accessor :genre, :author, :source, :label, :publish_date
   attr_reader :id
 

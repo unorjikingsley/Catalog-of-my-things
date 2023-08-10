@@ -1,4 +1,8 @@
 class Label
+  ##
+  # The Label class represents a label or tag that can be assigned to items such as books, movies, or music.
+  # It provides attributes and methods for managing and organizing items with a specific label.
+
   attr_reader :id, :items
   attr_accessor :title, :color
 
