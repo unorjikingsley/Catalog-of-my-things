@@ -6,7 +6,7 @@
 # offered by the app.
 
 require 'date'
-require_relative './store/store'
+require_relative 'store/store'
 require_relative 'classes/book'
 require_relative 'classes/label'
 
