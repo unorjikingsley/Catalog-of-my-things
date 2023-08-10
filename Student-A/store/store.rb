@@ -1,7 +1,7 @@
 require 'json'
 require_relative '../classes/book'
 require_relative '../classes/label'
-require_relative './modules/synchronizer'
+require_relative 'modules/synchronizer'
 
 class Store
   attr_accessor :books, :labels, :albums, :genres, :authors, :games, :movies, :sources

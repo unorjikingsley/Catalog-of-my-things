@@ -7,8 +7,8 @@
 
 require 'date'
 require_relative './store/store'
-require_relative './classes/book'
-require_relative './classes/label'
+require_relative 'classes/book'
+require_relative 'classes/label'
 
 class App
   attr_accessor :exit
