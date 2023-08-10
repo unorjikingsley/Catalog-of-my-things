@@ -19,42 +19,54 @@ module CreateGame
   end
 
   def create_game
-    print 'last_played_at:(yyyy-mm-dd): '
+    last_played_at, multiplayer, publish_date = game_details
+    author = create_author
+    game = create_game_instance(multiplayer, last_played_at, publish_date)
+    add_author_and_game(author, game)
+    persist_author_data(author)
+    persist_game_data(game)
+    puts 'Game created successfully'
+  end
+
+  def game_details
+    print 'last_played_at (yyyy-mm-dd): '
     last_played_at = gets.chomp
     print 'multiplayer: '
     multiplayer = gets.chomp
-    print 'publish_date(yyyy-mm-dd): '
+    print 'publish_date (yyyy-mm-dd): '
     publish_date = gets.chomp
+    [last_played_at, multiplayer, publish_date]
+  end
 
+  def create_author
     puts 'Give it an Author:'
     print 'Name: '
     name = gets.chomp
     print 'First_Name: '
     first_name = gets.chomp
-    print 'Last_name:'
+    print 'Last_name: '
     last_name = gets.chomp
-    author_list = Author.new(name, first_name, last_name)
+    Author.new(name, first_name, last_name)
+  end
 
-    game_list = Game.new(multiplayer, last_played_at, publish_date)
-    author_list.add_item(game_list)
+  def create_game_instance(multiplayer, last_played_at, publish_date)
+    Game.new(multiplayer, last_played_at, publish_date)
+  end
 
-    @authors << author_list
-    @games << game_list
+  def add_author_and_game(author, game)
+    authors << author
+    games << game
+  end
 
+  def persist_author_data(author)
     author_arr = load_author
-    game_arr = load_game
-
-    @authors.each do |author_|
-      author_arr << { name: author_.name, first_name: author_.first_name, last_name: author_.last_name }
-    end
-
+    author_arr << { name: author.name, first_name: author.first_name, last_name: author.last_name }
     persist_data('./src/Store/author.json', author_arr)
+  end
 
-    @games.each do |game_|
-      game_arr << { multiplayer: game_.multiplayer, last_played_at: game_.last_played_at }
-    end
-
+  def persist_game_data(game)
+    game_arr = load_game
+    game_arr << { multiplayer: game.multiplayer, last_played_at: game.last_played_at }
     persist_data('./src/Store/game.json', game_arr)
-    puts 'Game created successfully'
   end
 end
