@@ -1,9 +1,15 @@
-# add_game_handler.rb
+# frozen_string_literal: true
+
 require_relative 'handler'
+require_relative 'game'
 
 # Handler class for adding a game to the catalog.
 class AddGameHandler < Handler
-  def handle(catalog)
+  def initialize(games)
+    @games = games
+  end
+
+  def handle
     puts 'Enter Game Title:'
     title = gets.chomp
 
@@ -13,8 +19,8 @@ class AddGameHandler < Handler
     puts 'Enter Last Played Date (YYYY-MM-DD):'
     last_played_date = gets.chomp
 
-    game = Game.new(title: title, multiplayer: multiplayer, last_played_at: last_played_date)
-    catalog.add_game(game)
+    game = Game.new(nil, title, multiplayer, last_played_date)
+    @games << game
 
     puts 'Game added successfully!'
   end
