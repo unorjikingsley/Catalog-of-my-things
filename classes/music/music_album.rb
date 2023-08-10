@@ -7,7 +7,6 @@ class MusicAlbum < Item
   def initialize(on_spotify:, publish_date:, id: nil)
     super(publish_date, id)
     @on_spotify = on_spotify
-    # @genre = 'N/A'
   end
 
   def can_be_archived?
@@ -23,6 +22,3 @@ class MusicAlbum < Item
     }
   end
 end
-
-# test = MusicAlbum.new(on_spotify: true, publish_date: '2011/08/08')
-# puts test.can_be_archived?

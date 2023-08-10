@@ -1,9 +1,9 @@
 class Source
-  attr_reader :name, :id
-  attr_accessor :items
+  attr_accessor :name, :id
+  attr_reader :items
 
-  def initialize(name:, id: nil)
-    @id = id || rand(1..1000)
+  def initialize(name, id = nil)
+    @id = id || Random.rand(1..500)
     @name = name
     @items = []
   end
@@ -11,12 +11,5 @@ class Source
   def add_item(item)
     @items << item
     item.add_source(self)
-  end
-
-  def to_hash
-    {
-      'id' => @id,
-      'name' => @name
-    }
   end
 end
