@@ -1,0 +1,17 @@
+[
+  {
+    "on_spotify": true,
+    "Genre": "Hip-Hop",
+    "publish_date": "2010-10-12"
+  },
+  {
+    "on_spotify": true,
+    "Genre": "Trap",
+    "publish_date": "2010-09-12"
+  },
+  {
+    "on_spotify": true,
+    "Genre": "Hip-Hop",
+    "publish_date": "2015-02-08"
+  }
+]

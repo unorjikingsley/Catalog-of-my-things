@@ -1,0 +1,20 @@
+[
+  {
+    "publisher": "abcd",
+    "cover_state": "good",
+    "publish_date": "2000-12-12",
+    "label": {
+      "title": "Highschool",
+      "color": "red"
+    }
+  },
+  {
+    "publisher": "abcd",
+    "cover_state": "bad",
+    "publish_date": "2010-05-05",
+    "label": {
+      "title": "xyz",
+      "color": "red"
+    }
+  }
+]
