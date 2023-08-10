@@ -7,9 +7,7 @@ class Item
 
   def initialize(publish_date, id = nil)
     @id = id || Random.rand(1..1000)
-    # @genre = genre - already in the function
     # @author = author
-    # @source = source - already in the function
     # @label = label
     @publish_date = publish_date
     # @archived = archived
@@ -25,8 +23,8 @@ class Item
   def add_label; end
 
   def add_source(source)
-    # @source = source
-    # source.items << self unless source.items.include?(self)
+    @source = source
+    source.items << self unless source.items.include?(self)
   end
 
   def can_be_archived?

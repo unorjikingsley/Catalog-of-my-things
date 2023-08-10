@@ -6,8 +6,6 @@ module AddMovie
     @movies << movie
     source = add_source
     movie.add_source(source)
-    # source.add_item(movie)
-    # @sources << source
     puts 'Source Added Successfully'
   end
 

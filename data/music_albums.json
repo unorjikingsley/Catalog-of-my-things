@@ -10,5 +10,11 @@
     "publish_date": "2023/04/04",
     "on_spotify": false,
     "genre": "blues"
+  },
+  {
+    "id": 996,
+    "publish_date": "2012/08/03",
+    "on_spotify": false,
+    "genre": "rap"
   }
 ]

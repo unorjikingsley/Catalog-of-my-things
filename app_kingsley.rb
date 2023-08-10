@@ -5,6 +5,13 @@ require_relative 'modules/music/displaymusic'
 require_relative 'modules/music/displaygenre'
 require_relative 'modules/music/storage'
 
+# require_relative 'classes/movie/movie'
+# require_relative 'classes/movie/source'
+# require_relative 'modules/movie/addmovie'
+# require_relative 'modules/music/displaymovie'
+# require_relative 'modules/movies/displaysource'
+# require_relative 'modules/movies/storage_movies'
+
 class App
   attr_accessor :music_albums
 
@@ -13,6 +20,11 @@ class App
   include DisplayGenres
   include Storage
 
+  # include AddMovie
+  # include DisplayMovie
+  # include displaysource
+  # include StorageMovie
+
   def initialize
     @music_albums = []
     @genres = []
@@ -20,6 +32,8 @@ class App
     @sources = []
     load_genres
     load_music_albums
+    # load_sources
+    # load_movies
   end
 
   def run(option)
