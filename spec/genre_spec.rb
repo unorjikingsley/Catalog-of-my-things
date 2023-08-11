@@ -1,5 +1,5 @@
 require_relative '../classes/music/genre'
-require_relative '../classes/item_salim'
+require_relative '../classes/item'
 
 describe Genre do
   let(:name) { 'Rock' }

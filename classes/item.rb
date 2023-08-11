@@ -1,32 +1,30 @@
 require 'date'
-require_relative 'movie/source'
-require_relative 'music/genre'
 
 class Item
   attr_accessor :archived, :source, :publish_date, :id, :genre, :can_be_archived, :label
 
   def initialize(publish_date, id = nil)
     @id = id || Random.rand(1..1000)
-    # @genre = genre - already in the function
-    # @author = author
-    # @source = source - already in the function
-    # @label = label
     @publish_date = publish_date
-    # @archived = archived
   end
 
   def add_genre(genre)
     @genre = genre
-    # genre.items << self unless genre.items.include?(self)
   end
 
-  def add_author; end
+  def add_author(author)
+    @author = author
+    author.items << self unless author.items.include?(self)
+  end
 
-  def add_label; end
+  def add_label(label)
+    @label = label
+    @label.add_item(self)
+  end
 
   def add_source(source)
-    # @source = source
-    # source.items << self unless source.items.include?(self)
+    @source = source
+    source.items << self unless source.items.include?(self)
   end
 
   def can_be_archived?

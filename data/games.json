@@ -1,0 +1,23 @@
+[
+  {
+    "id": 374,
+    "publish_date": "2023/5/4",
+    "multiplayer": true,
+    "last_played_at": "2023/5/4",
+    "author": "greg"
+  },
+  {
+    "id": 584,
+    "publish_date": "2023/5/6",
+    "multiplayer": true,
+    "last_played_at": "2023/7/6",
+    "author": "salim"
+  },
+  {
+    "id": 937,
+    "publish_date": "2020/03/05",
+    "multiplayer": true,
+    "last_played_at": "2027/0105",
+    "author": "paul"
+  }
+]
