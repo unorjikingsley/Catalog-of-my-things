@@ -54,7 +54,7 @@ RSpec.describe Item do
   describe '#can_be_archived?' do
     context 'when publish date is over 10 years ago' do
       it 'returns true' do
-        ten_years_ago = (Date.today - 10 * 365).strftime('%Y-%m-%d')
+        ten_years_ago = (Date.today - (10 * 365)).strftime('%Y-%m-%d')
         item = Item.new(ten_years_ago)
         expect(item.can_be_archived?).to be(false)
       end
@@ -62,7 +62,7 @@ RSpec.describe Item do
 
     context 'when publish date is less than 10 years ago' do
       it 'returns false' do
-        nine_years_ago = (Date.today - 9 * 365).strftime('%Y-%m-%d')
+        nine_years_ago = (Date.today - (9 * 365)).strftime('%Y-%m-%d')
         item = Item.new(nine_years_ago)
         expect(item.can_be_archived?).to be(false)
       end
