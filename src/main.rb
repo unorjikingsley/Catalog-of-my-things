@@ -7,15 +7,13 @@ class Main
 
   def initialize
     @app = App.new
+    @app.exit = false
   end
 
   def run
-    loop do
+    until @app.exit
       @app.display_options
       option = take_input
-
-      break if option.zero?
-
       @app.run(option)
     end
   end

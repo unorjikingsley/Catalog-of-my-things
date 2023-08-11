@@ -9,10 +9,8 @@ require_relative 'modules/Movies/list_movie'
 require_relative 'modules/Source/list_source'
 require_relative 'modules/preserve_data'
 require_relative 'modules/load_data'
-require_relative 'modules/Game/dispalay_game'
 require_relative 'modules/Author/create_author'
 require_relative 'modules/Author/display_author'
-require_relative 'modules/Game/persist_data'
 
 class App
   include LoadData
@@ -24,11 +22,11 @@ class App
   include CreateMusicAlbum
   include DisplayMusicAlbums
   include DisplayAuthor
-  include DisplayGame
-  include CreateGame
   include AddMovie
   include ListMovie
   include ListSource
+
+  attr_accessor :exit
 
   def initialize
     @books = []
@@ -44,8 +42,6 @@ class App
 
   def sych
     load_data
-    @persist_authors = load_author
-    @persist_games = load_game
   end
 
   OPTIONS = {
@@ -59,14 +55,12 @@ class App
   ACTIONS = {
     1 => :display_books, 2 => :display_music_albums, 5 => :display_genres, 3 => :list_movie,
     6 => :display_labels, 8 => :list_source, 9 => :create_book, 10 => :create_music_album,
-    7 => :display_author, 4 => :display_game, 11 => :add_movie
+    7 => :display_author, 4 => :display_game, 11 => :add_movie, 0 => :exit_app
   }.freeze
 
   def run(option)
     action = ACTIONS[option]
     send(action) if action
-    preserve_data if option.zero?
-    puts 'Thank you for using our app!' if option == '0'
   end
 
   def display_options
@@ -75,5 +69,11 @@ class App
 
   def option?(option)
     OPTIONS.key?(option)
+  end
+
+  def exit_app
+    preserve_data
+    puts 'Thank you for using our app!'
+    @exit = true
   end
 end

@@ -16,5 +16,23 @@
       "title": "xyz",
       "color": "red"
     }
+  },
+  {
+    "publisher": "Paul",
+    "cover_state": "new",
+    "publish_date": "2020-01-01",
+    "label": {
+      "title": "my-book",
+      "color": "gray"
+    }
+  },
+  {
+    "publisher": "Kingsly",
+    "cover_state": "new",
+    "publish_date": "2020-01-02",
+    "label": {
+      "title": "gift",
+      "color": "red"
+    }
   }
 ]

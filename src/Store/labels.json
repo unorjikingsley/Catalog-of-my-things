@@ -2,5 +2,13 @@
   {
     "title": "xyz",
     "color": "red"
+  },
+  {
+    "title": "my-book",
+    "color": "gray"
+  },
+  {
+    "title": "gift",
+    "color": "red"
   }
 ]
