@@ -26,5 +26,12 @@
     "publish_date": "2000/03/03",
     "id": 747,
     "label": "nice"
+  },
+  {
+    "cover_state": "st",
+    "publisher": "Emma",
+    "publish_date": "2013-12-12",
+    "id": 287,
+    "label": "red"
   }
 ]
