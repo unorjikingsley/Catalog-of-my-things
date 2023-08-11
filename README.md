@@ -34,7 +34,6 @@
 > Catalog of my things Project is a Ruby-based console application designed to allows users to organize and store data about their personal catalog of items. With this application, you can easily manage various types of collections, such as books, music albums, movies, or any other items you wish to catalog.
 
 
-
 ## 🛠 Built With <a name="built-with"></a>
 
 - Ruby
