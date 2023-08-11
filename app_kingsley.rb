@@ -11,7 +11,7 @@ class App
   include AddMusic
   include DisplayMusic
   include DisplayGenres
-  include storage
+  include Storage
 
   def initialize
     @music_albums = []
@@ -31,7 +31,7 @@ class App
     when 3
       add_music
     when 4
-      puts option
+      puts 'Thank you for using this app!'
       save_music
     else
       puts 'Thank you for using this app!'

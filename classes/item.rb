@@ -3,17 +3,16 @@ require_relative 'movie/source'
 require_relative 'music/genre'
 
 class Item
-  attr_reader :id
-  attr_accessor :genre, :author, :label, :publish_date, :archived, :source
+  attr_accessor :archived, :source, :publish_date, :id, :genre, :can_be_archived, :label
 
   def initialize(publish_date, id = nil)
     @id = id || Random.rand(1..1000)
     # @genre = genre - already in the function
-    @author = author
+    # @author = author
     # @source = source - already in the function
-    @label = label
+    # @label = label
     @publish_date = publish_date
-    @archived = archived
+    # @archived = archived
   end
 
   def add_genre(genre)
@@ -26,8 +25,8 @@ class Item
   def add_label; end
 
   def add_source(source)
-    @source = source
-    source.items << self unless source.items.include?(self)
+    # @source = source
+    # source.items << self unless source.items.include?(self)
   end
 
   def can_be_archived?
