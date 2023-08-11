@@ -1,10 +1,7 @@
 <div align="center">
   <h1>Catalog_of_my_things</h1>
 </div>
-
-
 <a name="readme-top"></a>
-
 
 <!-- TABLE OF CONTENTS -->
 
