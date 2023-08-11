@@ -33,5 +33,12 @@
     "publish_date": "2013-12-12",
     "id": 287,
     "label": "red"
+  },
+  {
+    "cover_state": "cover",
+    "publisher": "dan",
+    "publish_date": "2022/01/08",
+    "id": 393,
+    "label": "title"
   }
 ]
