@@ -55,7 +55,7 @@
 
 ## Walkthrough video <a name="walk-through"></a>
 
- [video](https://drive.google.com/file/d/1TYLRgO1Jb216s9gm3s-mEgsSvbxbpiwH/view?usp=drive_link)
+ [video](https://drive.google.com/file/d/1WnpTeHgeWmiFDyaqeWQAh6F43BGMVLjP/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
